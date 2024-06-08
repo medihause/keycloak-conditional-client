@@ -18,6 +18,9 @@ jobs:
         with:
           cache-enabled: true
 
+      - name: Grant graddlew permissions
+        run: chmod +x ./gradlew
+
       - name: 🛠️ Build with Gradle
         run: ./gradlew build
 
