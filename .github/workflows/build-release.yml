@@ -13,12 +13,18 @@ jobs:
       - name: 📥 Checkout sources
         uses: actions/checkout@v4
 
+      - name: 🔧 Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: 17
+
       - name: 🔧 Setup Gradle
         uses: gradle/gradle-build-action@v3
         with:
           cache-enabled: true
 
-      - name: Grant graddlew permissions
+      - name: ✅ Grant gradlew permissions
         run: chmod +x ./gradlew
 
       - name: 🛠️ Build with Gradle
